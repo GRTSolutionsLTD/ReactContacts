@@ -10,7 +10,6 @@ export const SEARCH_CONTACT = 'SEARCH_CONTACT';
 export const REFRESH_CONTACT = 'REFRESH_CONTACT';
 
 export function OnAddContact(contact) {
-    //add remark
     return { type: ADD_CONTACT, payload: contact };
 }
 
