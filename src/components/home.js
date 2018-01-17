@@ -30,8 +30,7 @@ export class Home extends Component {
                             <div className="mask"></div>
                         </div>
                     </div>
-                    
-
+ 
                 </div>
             </div>
         );

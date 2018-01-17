@@ -5,6 +5,7 @@ import { Route, browserHistory, Redirect } from 'react-router'
 
 
 export class Add extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -28,10 +29,7 @@ export class Add extends React.Component {
           
            
         }
-        console.log(this.props.location)
 
-        debugger;
-        console.log(this.props);
         if (this.props.match.params.id != "null") {
             this.state.currentContact = this.props.data.filter(c => c.id == this.props.match.params.id);
             this.state.contact.name = this.state.currentContact[0].name;
