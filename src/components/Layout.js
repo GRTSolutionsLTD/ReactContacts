@@ -7,16 +7,13 @@ export class Layout extends React.Component {
         super(props, context)
         this.state = {
             collapsed: true,
+            today: new Date()
         };
     }
-
-
     toggleCollapse = () => {
         const collapsed = !this.state.collapsed;
         this.setState({ collapsed });
     }
-
-
     button = {
         margin: '0.5%',
         float: 'right'
@@ -26,7 +23,6 @@ export class Layout extends React.Component {
         const { location } = this.props;
         const { collapsed } = this.state;
         const navClass = collapsed ? "collapse" : "";
-
         return (
             <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation" >
                 <div className="container">
@@ -40,7 +36,9 @@ export class Layout extends React.Component {
                     </div>
                     <div className={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                        
+
+                         
+                           
                             <li>
                                 <Link to="/" onClick={this.toggleCollapse}>Home</Link>
                             </li>
@@ -48,11 +46,11 @@ export class Layout extends React.Component {
                                 <Link to="/ContactList" onClick={this.toggleCollapse}>ContactList</Link>
                             </li>
                             <li>
-                           
-                                <Link to={`/Add/${null}`}  onClick={this.toggleCollapse}>Add</Link>
+                                <Link to={`/Add/${null}`} onClick={this.toggleCollapse}>Add</Link>
                             </li>
-                        
+
                         </ul>
+
                     </div>
                 </div>
             </nav>

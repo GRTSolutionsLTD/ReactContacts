@@ -7,36 +7,36 @@ export const DELETE_CONTACT = 'DELETE_CONTACT';
 export const ADD_CONTACT = 'ADD_CONTACT';
 export const UPDATE_CONTACT = 'UPDATE_CONTACT';
 export const SEARCH_CONTACT = 'SEARCH_CONTACT';
+export const REFRESH_CONTACT = 'REFRESH_CONTACT';
 
 export function OnAddContact(contact) {
-    debugger;
     return { type: ADD_CONTACT, payload: contact };
+}
 
-export function OnSearch(searchKey) {
-        debugger;
-        return { type: SEARCH_CONTACT, payload: searchKey };
-    }
-}
 export function deleteContact(contactId) {
-    debugger;
-    return { type:DELETE_CONTACT, contactId };
+    return { type: DELETE_CONTACT, contactId };
 }
+
 export function OnUpdateContact(contact) {
-    debugger;
     return { type: UPDATE_CONTACT, payload: contact };
+}
+export function OnSearchContact(Value) {
+    return { type: SEARCH_CONTACT, payload: Value };
+}
+export function OnRefreshContact() {
+    return { type: REFRESH_CONTACT };
 }
 export const onLoad = () => (
     dispatch => {
-        return axios.get('https://api.myjson.com/bins/fu727')
-		.then(res => {
-
-			dispatch({
-				type:LOAD_CONTACT,
-				data:res.data.data
-			})})
-		.catch(err => {
-			debugger;
-			console.log("error");
-		}
-	   )
-})
+        return axios.get('contacts.json')
+            .then(res => {
+                dispatch({
+                    type: LOAD_CONTACT,
+                    data: res.data.data
+                })
+            })
+            .catch(err => {
+                console.log("error");
+            }
+            )
+    })

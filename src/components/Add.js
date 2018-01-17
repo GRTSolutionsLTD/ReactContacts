@@ -5,13 +5,10 @@ import { Route, browserHistory, Redirect } from 'react-router'
 
 
 export class Add extends React.Component {
-
     constructor(props) {
-
         super(props);
-
-
         this.state = {
+         
             contact: {
                 id: "",
                 name: "",
@@ -28,7 +25,11 @@ export class Add extends React.Component {
             },
             redirect: false,
             currentContact: null
+          
+           
         }
+        console.log(this.props.location)
+
         debugger;
         console.log(this.props);
         if (this.props.match.params.id != "null") {
@@ -39,23 +40,20 @@ export class Add extends React.Component {
             this.state.contact.email = this.state.currentContact[0].email;
             this.state.contact.phone = this.state.currentContact[0].phone;
             this.state.contact.id = this.state.currentContact[0].id;
+
         }
         this.onInputChange = this.onInputChange.bind(this);
     };
     onInputChange = (event) => {
-        debugger;
         const contactt = this.state.contact;
         contactt[event.target.id] = event.target.value;
         this.setState({ contact: contactt })
     }
     returnToList = (e) => {
-        debugger;
         e.preventDefault();
         this.setState({ redirect: true })
     }
     onSave = (event) => {
-        debugger;
-
         if (this.state.currentContact == null) {
             this.props.onAdd(this.state.contact);
             this.state.contact.id = this.props.data.length + 1;
@@ -65,73 +63,53 @@ export class Add extends React.Component {
         this.returnToList(event);
     }
     render() {
+
+       
         if (this.state.redirect) return <Redirect to="/ContactList" />
         return (
-            <div class="set-section">
-                <form class="panel panel-default">
-                    <div class="panel-heading">
-                        <span >Add</span>
-                        <span >Set</span> Contact <span class="font-bold"></span> </div>
-                    <div class="panel-body panel-contacts">
-                        <div class="panel-body panel-contacts">
-                            <div class="contact-header row">
-                                <br /><br /><br /><br /><br />
-                                <div class="contact-header row">
-                                    <span class="required-sign">*&nbsp;</span>
-                                    <input type="text"
-                                        id="name"
-                                        onChange={this.onInputChange}
-                                        placeholder="first name"
-                                        value={this.state.contact.name}
-                                        class="form-control display-inline" />
-                                </div>
-                                <br />
-                                <div class="contact-header row">
-                                    <span class="required-sign">*&nbsp;</span>
-                                    <input type="text"
-                                        id="lastName"
-                                        onChange={this.onInputChange}
-                                        placeholder="lastName"
-                                        value={this.state.contact.lastName}
-                                        class="form-control display-inline" />
-                                </div>
-                                <br />
-                                <div class="contact-header row">
-                                    <span class="required-sign">*&nbsp;</span>
-                                    <input type="text"
-                                        id="avatar"
-                                        onChange={this.onInputChange}
-                                        placeholder="img"
-                                        value={this.state.contact.avatar}
-                                        class="form-control display-inline" />
+            <div>
+                <form className="add">
+                    <p className="titleAdd">Add Contact</p>
+                    <input  
+                        id="name"
+                        onChange={this.onInputChange}
+                        placeholder="first name"
+                        value={this.state.contact.name}
+                        className="ss"/>
+                    <br />
+                    <input  
+                        id="lastName"
+                        onChange={this.onInputChange}
+                        placeholder="lastName"
+                        value={this.state.contact.lastName}
+                        className="ss"/>
+                    <br />
+                    <input  
+                        id="avatar"
+                        onChange={this.onInputChange}
+                        placeholder="img"
+                        value={this.state.contact.avatar}
+                        className="ss" />
+                    <br />
+                    <input type="email"
+                        id="email"
+                        onChange={this.onInputChange}
+                        placeholder="e-mail"
+                        value={this.state.contact.email}
+                        className="ss" />
+                    <br />
+                    <input type="phone"
+                        id="phone"
+                        onChange={this.onInputChange}
+                        placeholder="phone"
+                        value={this.state.contact.phone}
+                        className="ss" />
 
-                                </div>
-                                <br />
-                                <div class="contact-header row">
-                                    <span class="required-sign">*&nbsp;</span>
-                                    <input type="email"
-                                        id="email"
-                                        onChange={this.onInputChange}
-                                        placeholder="e-mail"
-                                        value={this.state.contact.email}
-                                        class="form-control display-inline" />
-                                    <br />
-                                </div>
-                                <div class="contact-header row">
-                                    <span class="required-sign">*&nbsp;</span>
-                                    <input type="phone"
-                                        id="phone"
-                                        onChange={this.onInputChange}
-                                        placeholder="phone"
-                                        value={this.state.contact.phone}
-                                        class="form-control display-inline" />
-                                </div>
-                                <button class="panel-footer" type="submit" onClick={this.onSave} >Save</button>
-                            </div>
-                        </div>
-                    </div>
+
+                    <button class="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
                 </form>
+               
             </div>
-                );
+        );
     }
 }
