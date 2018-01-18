@@ -9,11 +9,11 @@ export class ContactList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ValueSearch: "",
         }
         this.props.OnRefresh();
         console.log(this.props)
     }
+
     onInputChange = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
@@ -21,14 +21,22 @@ export class ContactList extends Component {
         this.props.onSearch(this.state.ValueSearch);
     }
 
+    onInputChangeLastName = (event) => {
+        const value = event.target.value;
+        this.state.ValueSearch = value;
+        this.props.OnRefresh();
+        this.props.onSearchLastName(this.state.ValueSearch);
+    }
+        
+        
     render() {
-        console.log(this);
+       // console.log(this);
         return (
             <div >
                 <Link to={`/Add/${null}`} >Add</Link>
                 <br /><br /><br />
-                <input className="search" type="text" placeholder="search" onChange={this.onInputChange} value={this.state.ValueSearch} />
-                <div class="table-users">
+                <input className="search" type="text" placeholder="search" onChange={this.onInputChange} />
+                <div className="table-users">
                     <table >
                         <tbody>
                             <tr>
@@ -40,7 +48,16 @@ export class ContactList extends Component {
                                 <th>update</th>
                                 <th>delete</th>
                             </tr>
-                            {this.props.FilterList.map(user => <Contact onDelete={this.props.onDelete} {...user} id={user.id}></Contact>)}
+                            <tr>
+                                <th><input onChange={this.onInputChange} /></th>
+                                <th><input onChange={this.onInputChangeLastName}   /></th>
+                                <th><input  /></th>
+                                <th><input /></th>
+                                <th><input /></th>
+                                <th><input /></th>
+                                <th><input /></th>
+                            </tr>
+                            {this.props.FilterList.map((user, i) => <Contact key={i}  onDelete={this.props.onDelete} {...user} id={user.id}></Contact>)}
                         </tbody>
                     </table>
                 </div>

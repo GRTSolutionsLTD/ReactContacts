@@ -32,11 +32,21 @@ const reducer = (state = { data: [], FilterList: [] }, action) => {
         case 'SEARCH_CONTACT': {
             //var lower = action.payload.toLowerCase();
             //var uper = action.payload.toUpperCase();
+<<<<<<< HEAD
             return { ...state, FilterList: state.FilterList.filter(c => c.name.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase() ||
                  c.lastName.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase() ||
                  c.email.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase() ||
                  c.phone.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()                  
                 )};
+=======
+            return { ...state, FilterList: state.FilterList.filter(c => c.name.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase())};
+        }
+
+        case 'SEARCH_LAST_NAME': {
+            //var lower = action.payload.toLowerCase();
+            //var uper = action.payload.toUpperCase();
+            return { ...state, FilterList: state.FilterList.filter(c => c.lastName.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()) };
+>>>>>>> 0b0142db70a981942e8798210a8cbba0efd6fc1e
         }
 
         case 'REFRESH_CONTACT': {

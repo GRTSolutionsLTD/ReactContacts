@@ -82,7 +82,7 @@ export class Add extends React.Component {
                         value={this.state.contact.lastName}
                         className="ss"/>
                     <br />
-                    <input  
+                   <input  
                         id="avatar"
                         onChange={this.onInputChange}
                         placeholder="img"
@@ -104,7 +104,7 @@ export class Add extends React.Component {
                         className="ss" />
 
 
-                    <button class="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
+                    <button className="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
                 </form>
                
             </div>
