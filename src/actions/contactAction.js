@@ -1,4 +1,3 @@
-
 import fetch from 'isomorphic-fetch'
 import * as axios from 'axios'
 

@@ -10,10 +10,14 @@ export class Layout extends React.Component {
             today: new Date()
         };
     }
-    toggleCollapse = () => {
+    toggleCollapse = (page) => {
         const collapsed = !this.state.collapsed;
         this.setState({ collapsed });
+        //change title
+        document.title=page;
     }
+
+
     button = {
         margin: '0.5%',
         float: 'right'
@@ -40,13 +44,13 @@ export class Layout extends React.Component {
                          
                            
                             <li>
-                                <Link to="/" onClick={this.toggleCollapse}>Home</Link>
+                                <Link to="/" onClick={() => {this.toggleCollapse("home") } } >Home</Link>
                             </li>
                             <li>
-                                <Link to="/ContactList" onClick={this.toggleCollapse}>ContactList</Link>
+                                <Link to="/ContactList" onClick={() => { this.toggleCollapse("contact list") } }>ContactList</Link>
                             </li>
                             <li>
-                                <Link to={`/Add/${null}`} onClick={this.toggleCollapse}>Add</Link>
+                                <Link to={`/Add/${null}`} onClick={() => { this.toggleCollapse("add") } }>Add</Link>
                             </li>
 
                         </ul>

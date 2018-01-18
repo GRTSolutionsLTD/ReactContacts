@@ -29,13 +29,13 @@ export class ContactList extends Component {
         
         
     render() {
-        console.log(this);
+       // console.log(this);
         return (
             <div >
                 <Link to={`/Add/${null}`} >Add</Link>
                 <br /><br /><br />
                 <input className="search" type="text" placeholder="search" onChange={this.onInputChange} />
-                <div class="table-users">
+                <div className="table-users">
                     <table >
                         <tbody>
                             <tr>
@@ -56,7 +56,7 @@ export class ContactList extends Component {
                                 <th><input /></th>
                                 <th><input /></th>
                             </tr>
-                            {this.props.FilterList.map(user => <Contact onDelete={this.props.onDelete} {...user} id={user.id}></Contact>)}
+                            {this.props.FilterList.map((user, i) => <Contact key={i}  onDelete={this.props.onDelete} {...user} id={user.id}></Contact>)}
                         </tbody>
                     </table>
                 </div>
