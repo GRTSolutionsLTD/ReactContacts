@@ -10,6 +10,7 @@ export class Contact extends React.Component {
     render() {
         // var x = this.props.avatar; rrrr
         //remark : chagit
+        //add remark
         return (
             <tr>
                 <td> {this.props.name}</td>
