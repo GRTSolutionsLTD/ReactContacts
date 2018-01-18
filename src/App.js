@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { onLoad } from './actions/contactAction'
-import { OnAddContact, OnUpdateContact, deleteContact, OnSearchContact, OnRefreshContact } from './actions/contactAction'
+import { OnAddContact, OnUpdateContact, deleteContact, OnSearchContact, OnRefreshContact, OnSearchContactLastName } from './actions/contactAction'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Home } from './components/home';
 import { Add } from './components/Add';
@@ -26,7 +26,7 @@ class App extends Component {
                         <Route exact path="/"
                             render={(props) => <Home {...props} data={this.props.data}></Home>} />
                         <Route path="/ContactList"
-                            render={(props) => <ContactList onDelete={this.props.delete} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
+                            render={(props) => <ContactList onDelete={this.props.delete}  onSearchLastName={this.props.SearchLastName} onSearch={this.props.Search}  data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
                         <Route path="/Add/:id"
                             render={(props) => <Add {...props} onAdd={this.props.add} onUpdate={this.props.update} data={this.props.data} ></Add>} />
                     </div>
@@ -49,6 +49,7 @@ function mapDispatchToProps(dispatch) {
         add: (contact) => dispatch(OnAddContact(contact)),
         update: (contact) => dispatch(OnUpdateContact(contact)),
         Search: (value) => dispatch(OnSearchContact(value)),
+        SearchLastName: (value) => dispatch(OnSearchContactLastName(value)),
         Refresh: () => dispatch(OnRefreshContact())
     };
 }

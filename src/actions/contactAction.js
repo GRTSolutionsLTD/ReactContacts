@@ -8,6 +8,7 @@ export const ADD_CONTACT = 'ADD_CONTACT';
 export const UPDATE_CONTACT = 'UPDATE_CONTACT';
 export const SEARCH_CONTACT = 'SEARCH_CONTACT';
 export const REFRESH_CONTACT = 'REFRESH_CONTACT';
+export const SEARCH_LAST_NAME = 'SEARCH_LAST_NAME';
 
 export function OnAddContact(contact) {
     return { type: ADD_CONTACT, payload: contact };
@@ -23,6 +24,11 @@ export function OnUpdateContact(contact) {
 export function OnSearchContact(Value) {
     return { type: SEARCH_CONTACT, payload: Value };
 }
+
+export function OnSearchContactLastName(Value) {
+    return { type: SEARCH_LAST_NAME, payload: Value };
+}
+
 export function OnRefreshContact() {
     return { type: REFRESH_CONTACT };
 }
