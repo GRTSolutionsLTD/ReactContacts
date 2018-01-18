@@ -49,7 +49,7 @@ export class ContactList extends Component {
                             </tr>
                             <tr>
                                 <th><input onChange={this.onInputChange} /></th>
-                                <th><input onChange={this.onInputChangeLastName}  /></th>
+                                <th><input onChange={this.onInputChangeLastName}   /></th>
                                 <th><input  /></th>
                                 <th><input /></th>
                                 <th><input /></th>
