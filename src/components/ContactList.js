@@ -4,7 +4,12 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
 import { Contact } from './Contact'
 
+<<<<<<< HEAD
+
+export class ContactList extends Component {
+=======
 export class ContactList extends Component   {
+>>>>>>> b0e06bbaaa19db27cb739a72c42b0a2d28410cf0
     constructor(props) {
         super(props);
         this.state = {
