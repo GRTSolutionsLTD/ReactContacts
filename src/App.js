@@ -16,7 +16,6 @@ class App extends Component {
         this.props.onLoad();
     }
     render() {
-       // console.log(this)
         return (
             <div>
                  

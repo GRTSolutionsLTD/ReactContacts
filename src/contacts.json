@@ -4,7 +4,8 @@
       "id": "5725a680b3249760ea21de52",
       "name": "Abbott",
       "lastName": "Keitch",
-      "avatar": "assets/images/avatars/Abbott.jpg",
+      // "avatar": "assets/images/avatars/Abbott.jpg",
+      "avatar": "img/image001.jpg",
       "nickname": "Royalguard",
       "company": "Saois",
       "jobTitle": "Digital Archivist",
@@ -26,7 +27,7 @@
       "phone": "+1-202-555-0141",
       "address": "906 Valley Road Michigan City, IN 46360",
       "birthday": null,
-      "notes": ""
+      "notes": "",
     },
     {
       "id": "5725a68009e20d0a9e9acf2a",
