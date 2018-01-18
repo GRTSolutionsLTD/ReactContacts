@@ -18,7 +18,7 @@ export class Contact extends React.Component {
                 <td> {this.props.phone} </td>
 
                 <td ><Link to={`/Add/${this.props.id}`}>Update</Link></td>
-                <td><button  onClick={() => this.props.onDelete(this.props.id)}>delete</button></td>
+                <td><button className="delete" onClick={() => this.props.onDelete(this.props.id)}>delete</button></td>
             </tr>
         );
        

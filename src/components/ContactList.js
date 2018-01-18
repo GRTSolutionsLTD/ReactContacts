@@ -4,6 +4,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
 import { Contact } from './Contact'
 
+
 export class ContactList extends Component {
     constructor(props) {
         super(props);

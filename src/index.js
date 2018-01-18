@@ -11,7 +11,8 @@ import ContactReducer from './reducers/ContactReducer';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './components/home.css'
-import './components/ContactList.scss'
+import './components/ContactList.css'
+
 
 const store = createStore(ContactReducer, applyMiddleware(thunkMiddleware, logger));
 
