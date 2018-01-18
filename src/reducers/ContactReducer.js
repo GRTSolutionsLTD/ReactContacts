@@ -45,8 +45,12 @@ const reducer = (state = { data: [], FilterList: [] }, action) => {
         case 'SEARCH_LAST_NAME': {
             //var lower = action.payload.toLowerCase();
             //var uper = action.payload.toUpperCase();
+<<<<<<< HEAD
             return { ...state, FilterList: state.FilterList.filter(c => c.lastName.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()) };
 >>>>>>> 0b0142db70a981942e8798210a8cbba0efd6fc1e
+=======
+           return { ...state, FilterList: state.FilterList.filter(c => c.lastName.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()) };
+>>>>>>> b0e06bbaaa19db27cb739a72c42b0a2d28410cf0
         }
 
         case 'REFRESH_CONTACT': {

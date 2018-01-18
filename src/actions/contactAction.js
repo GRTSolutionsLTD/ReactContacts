@@ -25,7 +25,7 @@ export function OnSearchContact(Value) {
 }
 
 export function OnSearchContactLastName(Value) {
-    return { type: SEARCH_LAST_NAME, payload: Value };
+    return { type: SEARCH_LAST_NAME, payload: Value};
 }
 
 export function OnRefreshContact() {

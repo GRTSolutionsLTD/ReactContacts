@@ -16,8 +16,7 @@ export class Layout extends React.Component {
         //change title
         document.title=page;
     }
-
-
+    
     button = {
         margin: '0.5%',
         float: 'right'
