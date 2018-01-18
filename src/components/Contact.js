@@ -8,7 +8,8 @@ export class Contact extends React.Component {
         super(props);
     }
     render() {
-        // var x = this.props.avatar;
+        // var x = this.props.avatar; rrrr
+        //remark : chagit
         return (
             <tr>
                 <td> {this.props.name}</td>
