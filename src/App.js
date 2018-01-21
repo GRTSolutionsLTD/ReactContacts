@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { onLoad } from './actions/contactAction'
-import { OnAddContact, OnUpdateContact, deleteContact, OnSearchContact, OnRefreshContact, OnSearchContactLastName } from './actions/contactAction'
+import { OnAddContact, OnUpdateContact, deleteContact, OnSearchContact, OnRefreshContact, OnSearchContactLastName, OnSearchContactFirstName } from './actions/contactAction'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Home } from './components/home';
 import { Add } from './components/Add';
@@ -50,6 +50,7 @@ function mapDispatchToProps(dispatch) {
         update: (contact) => dispatch(OnUpdateContact(contact)),
         Search: (value) => dispatch(OnSearchContact(value)),
         SearchLastName: (value) => dispatch(OnSearchContactLastName(value)),
+        SearchFirstName: (value) => dispatch(OnSearchContactFirstName(value)),
         Refresh: () => dispatch(OnRefreshContact())
     };
 }

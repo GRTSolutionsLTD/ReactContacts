@@ -22,6 +22,13 @@ export class ContactList extends Component   {
         this.props.onSearch(this.state.ValueSearch);
     }
 
+    onInputChangeFirstName = (event) => {
+        const value = event.target.value;
+        this.state.ValueSearch = value;
+        this.props.OnRefresh();
+        this.props.onSearchFirstName(this.state.ValueSearch);
+    }
+
     onInputChangeLastName = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
@@ -51,7 +58,7 @@ export class ContactList extends Component   {
                                 <th>delete</th>
                             </tr>
                             <tr>
-                                <th><input name="firstName" onChange={this.onInputChange} /></th>
+                                <th><input name="firstName" onChange={this.onInputChangeFirstName} /></th>
                                 <th><input name="lastName" onChange={this.onInputChangeLastName} /></th>
                                 <th></th>
                                 <th><input name="email" onChange={this.onInputChangeLastName} /></th>
