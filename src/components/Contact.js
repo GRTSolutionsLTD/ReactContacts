@@ -15,7 +15,7 @@ export class Contact extends React.Component {
             <tr>
                 <td> {this.props.name}</td>
                 <td> {this.props.lastName}</td>
-                <td> <img src="C:\Users\ADMIN\Desktop\ProjYaelNoa\src\img\login-img.jpg" style={{ width: 100, height: 50 }} /> </td>
+                <td> <img src="../img/login-img.jpg" style={{ width: 100, height: 50 }} /> </td>
                 <td> {this.props.email} </td>
                 <td> {this.props.phone} </td>
 
