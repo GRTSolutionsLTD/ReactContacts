@@ -12,6 +12,7 @@ export const SEARCH_LAST_NAME = 'SEARCH_LAST_NAME';
 export const SEARCH_EMAIL = 'SEARCH_EMAIL';
 export const SEARCH_PHONE = 'SEARCH_PHONE';
 
+
 export function OnAddContact(contact) {
     return { type: ADD_CONTACT, payload: contact };
 }

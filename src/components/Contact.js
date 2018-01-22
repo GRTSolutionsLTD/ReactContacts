@@ -8,14 +8,14 @@ export class Contact extends React.Component {
         super(props);
     }
     render() {
-        // var x = this.props.avatar;
-
+        // var x = this.props.avatar; rrrr
+        //remark : chagit
         //add remark
         return (
             <tr>
                 <td> {this.props.name}</td>
                 <td> {this.props.lastName}</td>
-                <td> <img src="../img/login-img.jpg" style={{ width: 100, height: 50 }} /> </td>
+                <td> <img src={this.props.avatar} style={{ width: 100, height: 50 }} /> </td>
                 <td> {this.props.email} </td>
                 <td> {this.props.phone} </td>
 
