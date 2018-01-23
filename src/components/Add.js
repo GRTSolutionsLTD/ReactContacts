@@ -4,6 +4,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import { Route, browserHistory, Redirect } from 'react-router'
 
 
+
 export class Add extends React.Component {
     //trying something
     constructor(props) {
@@ -38,7 +39,6 @@ export class Add extends React.Component {
             this.state.contact.email = this.state.currentContact[0].email;
             this.state.contact.phone = this.state.currentContact[0].phone;
             this.state.contact.id = this.state.currentContact[0].id;
-
         }
         this.onInputChange = this.onInputChange.bind(this);
     };
@@ -49,7 +49,8 @@ export class Add extends React.Component {
     }
     returnToList = (e) => {
         e.preventDefault();
-        this.setState({ redirect: true })
+        this.setState({ redirect: true });
+        document.title = "contact list";
     }
     onSave = (event) => {
         if (this.state.currentContact == null) {
@@ -105,6 +106,7 @@ export class Add extends React.Component {
 
 
                     <button className="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
+
                 </form>
                
             </div>
