@@ -5,7 +5,7 @@ import { Route } from 'react-router'
 import { Contact } from './Contact'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
-    
+
     
 export class ContactList extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ export class ContactList extends Component {
     onInputChangeFirstName = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
-        ///source page
+
         this.props.OnRefresh();
         this.props.onSearchFirstName(this.state.ValueSearch);
     }
@@ -34,7 +34,7 @@ export class ContactList extends Component {
     onInputChangeLastName = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
-        ///source page
+
         this.props.OnRefresh();
         this.props.onSearchLastName(this.state.ValueSearch);
     }
@@ -42,7 +42,7 @@ export class ContactList extends Component {
     onInputChangePhone = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
-        ///source page
+
         this.props.OnRefresh();
         this.props.onSearchPhone(this.state.ValueSearch);
     }
@@ -51,7 +51,7 @@ export class ContactList extends Component {
     onInputChangeEmail = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
-        ///source page
+
         this.props.OnRefresh();
         this.props.onSearchEmail(this.state.ValueSearch);
     }
@@ -60,35 +60,25 @@ export class ContactList extends Component {
  
     render() {
 
-
-
-
-
         const columns = [{ Header: 'First name', accessor: 'name' },
-                        { Header: 'Last Name', accessor: 'lastName' },
-                        { Header: 'img', accessor: 'avatar' },
-                        { Header: 'Email', accessor: 'email' },
-                        { Header: 'Phone', accessor: 'phone' }]
-
-
-
+                         { Header: 'Last Name', accessor: 'lastName' },
+                         { Header: 'Phone', accessor: 'phone' },
+                         { Header: 'Email', accessor: 'email' },]
+       
         return (
-            <div >
+            <div>
+
                 <Link to={`/Add/${null}`} >Add</Link>
                 <br /><br /><br />
-
-
-                    <ReactTable
+                <ReactTable
                     data={this.props.FilterList}
-                   // columns={columns}
+                    columns={columns}
                     showPagination={true}
-                    TrComponent={Contact}
-                   
-                    />
-                        
+                    showPageSizeOptions={false}
+                    defaultPageSize={10}
+                    TrComponent={Contact} />
+                  
             </div>
         );
     }
 }
-
-

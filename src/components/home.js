@@ -8,7 +8,6 @@ export class Home extends Component {
     constructor(props, context) {
         super(props, context)
         this.state = {
-
             today: new Date()
         };
     }
