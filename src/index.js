@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './components/home.css'
 import './components/ContactList.css'
-
+import './styles/ContactGraph.css'
 
 const store = createStore(ContactReducer, applyMiddleware(thunkMiddleware, logger));
 

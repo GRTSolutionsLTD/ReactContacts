@@ -7,13 +7,9 @@ import { Contact } from './Contact'
 export class ContactList extends Component   {
     constructor(props) {
         super(props);
-        this.state = {
-        }
+        this.state = {}
         this.props.OnRefresh();
-        console.log(this.props)
     }
-
-    
 
     onInputChange = (event) => {
         const value = event.target.value;
@@ -54,6 +50,7 @@ export class ContactList extends Component   {
                                 <th>image</th>
                                 <th>email</th>
                                 <th>phone</th>
+                                <th>price</th>
                                 <th>update</th>
                                 <th>delete</th>
                             </tr>
@@ -63,6 +60,7 @@ export class ContactList extends Component   {
                                 <th></th>
                                 <th><input name="email" onChange={this.onInputChangeLastName} /></th>
                                 <th><input name="phone" onChange={this.onInputChangeLastName} /></th>
+                                <th></th>
                                 <th></th>
                                 <th></th>  
                             </tr>

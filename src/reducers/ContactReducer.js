@@ -1,13 +1,13 @@
 function update(state, payload) {
-    debugger;
-    console.log(state, payload)
     return state.id !== payload.id ? state : payload;
 }
 const reducer = (state = { data: [], FilterList: [] }, action) => {
     switch (action.type) {
         case 'LOAD_CONTACT':
-            return { data: action.data, FilterList: action.data };
-
+            {
+                //return { data: action.data, FilterList: action.data };
+                return { ...state, data: action.data };
+            }
         case 'DELETE_CONTACT': {
             return {
                 ...state, data: state.data.filter(c => c.id !== action.contactId),

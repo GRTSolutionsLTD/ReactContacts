@@ -27,36 +27,39 @@ export class Layout extends React.Component {
         const { collapsed } = this.state;
         const navClass = collapsed ? "collapse" : "";
         return (
-            <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation" >
-                <div className="container">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle" onClick={this.toggleCollapse} >
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div className={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
-                        <ul className="nav navbar-nav">
+            <nav className="navbar navbar-inverse navbar-static-top" role="navigation" >
+                    <div className="container">
+                        <div className="navbar-header">
+                            <button type="button" className="navbar-toggle" onClick={this.toggleCollapse} >
+                                <span className="sr-only">Toggle navigation</span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div className={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
+                            <ul className="nav navbar-nav">
 
                          
                            
-                            <li>
-                                <Link to="/" onClick={() => {this.toggleCollapse("home") } } >Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/ContactList" onClick={() => { this.toggleCollapse("contact list") } }>ContactList</Link>
-                            </li>
-                            <li>
-                                <Link to={`/Add/${null}`} onClick={() => { this.toggleCollapse("add") } }>Add</Link>
-                            </li>
+                                <li>
+                                    <Link to="/" onClick={() => {this.toggleCollapse("home") } } >Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/ContactList" onClick={() => { this.toggleCollapse("contact list") } }>ContactList</Link>
+                                </li>
+                                <li>
+                                    <Link to={`/Add/${null}`} onClick={() => { this.toggleCollapse("add") } }>Add</Link>
+                                </li>
+                                <li>
+                                    <Link to={`/Graph`}>Graph</Link>
+                                </li>
 
-                        </ul>
+                            </ul>
 
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
         );
     }
 }

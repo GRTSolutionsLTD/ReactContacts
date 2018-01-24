@@ -18,9 +18,10 @@ export class Contact extends React.Component {
                 <td> <img src={this.props.avatar} style={{ width: 100, height: 50 }} /> </td>
                 <td> {this.props.email} </td>
                 <td> {this.props.phone} </td>
-
+                <td> {this.props.price} </td>
                 <td ><Link to={`/Add/${this.props.id}`}>Update</Link></td>
                 <td><button className="delete" onClick={() => this.props.onDelete(this.props.id)}>delete</button></td>
+
             </tr>
         );
     }

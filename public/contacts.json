@@ -12,7 +12,8 @@
       "phone": "+1-202-555-0175",
       "address": "933 8th Street Stamford, CT 06902",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680606588342058356d",
@@ -26,7 +27,8 @@
       "phone": "+1-202-555-0141",
       "address": "906 Valley Road Michigan City, IN 46360",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a68009e20d0a9e9acf2a",
@@ -40,7 +42,8 @@
       "phone": "+1-202-555-0196",
       "address": "183 River Street Passaic, NJ 07055",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a6809fdd915739187ed5",
@@ -54,7 +57,8 @@
       "phone": "+1-202-555-0118",
       "address": "143 Jones Street Eau Claire, WI 54701",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a68007920cf75051da64",
@@ -68,7 +72,8 @@
       "phone": "+1-202-555-0177",
       "address": "218 Pearl Street Brandon, FL 33510",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a68031fdbb1db2c1af47",
@@ -82,7 +87,8 @@
       "phone": "+1-202-555-0136",
       "address": "329 Bridge Street Desoto, TX 75115",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680bc670af746c435e2",
@@ -96,7 +102,8 @@
       "phone": "+1-202-555-0107",
       "address": "956 6th Avenue North Bergen, NJ 0704",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680e7eb988a58ddf303",
@@ -110,7 +117,8 @@
       "phone": "+1-202-555-0113",
       "address": "664 York Street Cambridge, MA 02138",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680dcb077889f758961",
@@ -124,7 +132,8 @@
       "phone": "+1-202-555-0173",
       "address": "738 Route 11 Cornelius, NC 28031",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a6806acf030f9341e925",
@@ -138,7 +147,8 @@
       "phone": "+1-202-555-0163",
       "address": "194 Washington Avenue Saint Petersburg, FL 33702",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680ae1ae9a3c960d487",
@@ -152,7 +162,8 @@
       "phone": "+1-202-555-0151",
       "address": "686 Roosevelt Avenue Oviedo, FL 32765",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680b8d240c011dd224b",
@@ -166,7 +177,8 @@
       "phone": "+1-202-555-0160",
       "address": "202 Hartford Road Lynchburg, VA 24502",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a68034cb3968e1f79eac",
@@ -180,7 +192,8 @@
       "phone": "+1-202-555-0186",
       "address": "219 Woodland Road Valrico, FL 33594",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a6801146cce777df2a08",
@@ -194,7 +207,8 @@
       "phone": "+1-202-555-0115",
       "address": "305 Willow Drive Superior, WI 54880",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a6808a178bfd034d6ecf",
@@ -208,7 +222,8 @@
       "phone": "+1-202-555-0199",
       "address": "148 Heather Lane Mcminnville, TN 37110",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680653c265f5c79b5a9",
@@ -222,7 +237,8 @@
       "phone": "+1-202-555-0120",
       "address": "345 Laurel Lane Union City, NJ 07087",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680bbcec3cc32a8488a",
@@ -236,7 +252,8 @@
       "phone": "+1-202-555-0172",
       "address": "572 Rose Street Summerfield, FL 34491",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a6803d87f1b77e17b62b",
@@ -250,7 +267,8 @@
       "phone": "+1-202-555-0190",
       "address": "527 Jefferson Court Conyers, GA 30012",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680e87cb319bd9bd673",
@@ -264,7 +282,8 @@
       "phone": "+1-202-555-0116",
       "address": "297 Strawberry Lane Faribault, MN 55021",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 200
     },
     {
       "id": "5725a6802d10e277a0f35775",
@@ -278,7 +297,8 @@
       "phone": "+1-202-555-0159",
       "address": "928 Canterbury Court Pittsburgh, PA 15206",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 300
     },
     {
       "id": "5725a680aef1e5cf26dd3d1f",
@@ -292,7 +312,8 @@
       "phone": "+1-202-555-0173",
       "address": "904 Ridge Road Pickerington, OH 43147",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     },
     {
       "id": "5725a680cd7efa56a45aea5d",
@@ -306,7 +327,8 @@
       "phone": "+1-202-555-0183",
       "address": "447 Charles Street Dorchester, MA 02125",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 200
     },
     {
       "id": "5725a680fb65c91a82cb35e2",
@@ -320,7 +342,8 @@
       "phone": "+1-202-555-0138",
       "address": "84 Valley View Road Norman, OK 73072",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 300
     },
     {
       "id": "5725a68018c663044be49cbf",
@@ -334,7 +357,8 @@
       "phone": "+1-202-555-0146",
       "address": "204 Clark Street Monsey, NY 10952",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 200
     },
     {
       "id": "5725a6809413bf8a0a5272b1",
@@ -348,7 +372,8 @@
       "phone": "+1-202-555-0146",
       "address": "261 Cleveland Street Riverside, NJ 08075",
       "birthday": null,
-      "notes": ""
+      "notes": "",
+      "price": 100
     }
   ]
 }
