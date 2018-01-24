@@ -47,7 +47,7 @@ export class ContactGraph extends Component {
         super(props);
         this.state = {
             pointsArray: this.pointsArray,
-            progressBarWrappersClasses: "row",
+            //progressBarWrappersClasses: "row",
             // progressBarStyle={ width: '10%' }
         }
         this.props.onLoad().then(() => {

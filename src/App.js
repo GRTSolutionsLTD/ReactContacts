@@ -14,8 +14,7 @@ import { ContactGraph } from './components/ContactGraph';
 class App extends Component {
     componentWillMount() {
         
-        this.props.onLoad();
-        debugger
+        //this.props.onLoad();
         console.log('App',this.props)
     }
 
