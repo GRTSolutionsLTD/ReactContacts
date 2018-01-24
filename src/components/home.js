@@ -6,6 +6,7 @@ import { ContactList } from './ContactList'
 import style from './home.css'
 //import ToolTip from 'react-portal-tooltip';
 
+
 export class Home extends Component {
     constructor(props) {
         super(props)
@@ -19,6 +20,8 @@ export class Home extends Component {
     render() {
         return (
             <div  >
+             
+
                 <div className='home' >
                     <div className='text'>Count of contacts</div>
                     <br />

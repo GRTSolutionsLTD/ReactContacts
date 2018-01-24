@@ -25,7 +25,7 @@ class App extends Component {
                     <div>
                         <Layout />
                         <Route exact path="/"
-                            render={(props) => <Home {...props} data={this.props.onLoad()}></Home>} />
+                            render={(props) => <Home {...props} data={this.props.onLoad}></Home>} />
                         <Route path="/ContactList"
                             render={(props) => <ContactList onDelete={this.props.delete} onSearchLastName={this.props.SearchLastName} onSearchFirstName={this.props.SearchFirstName} onSearchPhone={this.props.SearchPhone} onSearchEmail={this.props.SearchEmail} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
                         <Route path="/Add/:id"

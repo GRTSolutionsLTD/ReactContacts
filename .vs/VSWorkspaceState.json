@@ -1,16 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node_modules\\redux",
-    "\\node_modules\\redux-logger",
-    "\\node_modules\\redux-logger\\dist",
-    "\\node_modules\\redux-thunk",
-    "\\node_modules\\redux-thunk\\dist",
-    "\\node_modules\\redux\\dist",
+    "\\public",
     "\\src",
-    "\\src\\actions",
+    "\\src\\api",
     "\\src\\components",
-    "\\src\\reducers"
+    "\\src\\reducers",
+    "\\src\\styles"
   ],
   "SelectedNode": "\\src\\components\\ContactGraph.js",
   "PreviewInSolutionExplorer": false

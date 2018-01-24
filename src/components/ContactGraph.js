@@ -4,6 +4,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
 import ReactDOM from 'react-dom';
 import { LineChart, Line, CartesianGrid, YAxis, XAxis, Tooltip, ComposedChart, Legend, Bar } from 'recharts';
+import SnowStorm from 'react-snowstorm';
 
 const CustomTooltip = React.createClass({
     propTypes: {
@@ -41,10 +42,16 @@ const AxisLabel = ({ axisType, x, y, width, height, stroke, children }) => {
 };
 
 
+export interface Props {
+    data: [];
+    onLoad: object;
+}
+
 export class ContactGraph extends Component {
     pointsArray = [];
     constructor(props) {
         super(props);
+        console.log(props,"this is my types");
         this.state = {
             pointsArray: this.pointsArray,
             //progressBarWrappersClasses: "row",
@@ -98,6 +105,7 @@ export class ContactGraph extends Component {
     render() {
         return (
             <div className="container">
+                <SnowStorm snowColor="#808080"  />
                 <div className="row">
                     <div className="page-header">
                         <h1>Contact Graph</h1>
