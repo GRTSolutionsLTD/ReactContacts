@@ -54,6 +54,18 @@ const reducer = (state = { data: [], FilterList: [] }, action) => {
             return { ...state, FilterList: state.FilterList.filter(c => c.lastName.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()) };
         }
 
+        case 'SEARCH_PHONE': {
+            //var lower = action.payload.toLowerCase();
+            //var uper = action.payload.toUpperCase();
+            return { ...state, FilterList: state.FilterList.filter(c => c.phone.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()) };
+        }
+
+        case 'SEARCH_EMAIL': {
+            //var lower = action.payload.toLowerCase();
+            //var uper = action.payload.toUpperCase();
+            return { ...state, FilterList: state.FilterList.filter(c => c.email.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase()) };
+        }
+
         case 'REFRESH_CONTACT': {
             return { ...state, FilterList: state.data }
         }

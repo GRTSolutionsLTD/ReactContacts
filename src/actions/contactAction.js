@@ -9,6 +9,8 @@ export const SEARCH_CONTACT = 'SEARCH_CONTACT';
 export const REFRESH_CONTACT = 'REFRESH_CONTACT';
 export const SEARCH_FIRST_NAME = 'SEARCH_FIRST_NAME';
 export const SEARCH_LAST_NAME = 'SEARCH_LAST_NAME';
+export const SEARCH_EMAIL = 'SEARCH_EMAIL';
+export const SEARCH_PHONE = 'SEARCH_PHONE';
 
 
 export function OnAddContact(contact) {
@@ -32,6 +34,14 @@ export function OnSearchContactFirstName(Value) {
 
 export function OnSearchContactLastName(Value) {
     return { type: SEARCH_LAST_NAME, payload: Value };
+}
+
+export function OnSearchContactPhone(Value) {
+    return { type: SEARCH_PHONE, payload: Value };
+}
+
+export function OnSearchContactEmail(Value) {
+    return { type: SEARCH_EMAIL, payload: Value };
 }
 
 export function OnRefreshContact() {

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { onLoad } from './actions/contactAction'
-import { OnAddContact, OnUpdateContact, deleteContact, OnSearchContact, OnRefreshContact, OnSearchContactLastName, OnSearchContactFirstName } from './actions/contactAction'
+import { OnAddContact, OnUpdateContact, deleteContact, OnSearchContact, OnRefreshContact, OnSearchContactLastName, OnSearchContactFirstName, OnSearchContactEmail, OnSearchContactPhone } from './actions/contactAction'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Home } from './components/home';
 import { Add } from './components/Add';
@@ -18,6 +18,7 @@ class App extends Component {
         debugger
         console.log('App',this.props)
     }
+
     render() {
         return (
             <div>
@@ -27,7 +28,7 @@ class App extends Component {
                         <Route exact path="/"
                             render={(props) => <Home {...props} data={this.props.onLoad()}></Home>} />
                         <Route path="/ContactList"
-                            render={(props) => <ContactList onDelete={this.props.delete}  onSearchLastName={this.props.SearchLastName} onSearch={this.props.Search}  data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
+                            render={(props) => <ContactList onDelete={this.props.delete} onSearchLastName={this.props.SearchLastName} onSearchFirstName={this.props.SearchFirstName} onSearchPhone={this.props.SearchPhone} onSearchEmail={this.props.SearchEmail} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
                         <Route path="/Add/:id"
                             render={(props) => <Add {...props} onAdd={this.props.add} onUpdate={this.props.update} data={this.props.data} ></Add>} />
                         <Route path="/Graph"
@@ -38,12 +39,15 @@ class App extends Component {
         );
     }
 }
+
+
 function mapStateToProps(store, ownProps) {
     return {
         data: store.data,
         FilterList: store.FilterList
     };
 }
+
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -54,6 +58,8 @@ function mapDispatchToProps(dispatch) {
         Search: (value) => dispatch(OnSearchContact(value)),
         SearchLastName: (value) => dispatch(OnSearchContactLastName(value)),
         SearchFirstName: (value) => dispatch(OnSearchContactFirstName(value)),
+        SearchPhone: (value) => dispatch(OnSearchContactPhone(value)),
+        SearchEmail: (value) => dispatch(OnSearchContactEmail(value)),
         Refresh: () => dispatch(OnRefreshContact())
     };
 }
