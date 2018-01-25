@@ -23,7 +23,8 @@ export class Add extends React.Component {
                 phone: "",
                 address: "",
                 birthday: "",
-                notes: ""
+                notes: "",
+                price:""
             },
             redirect: false,
             currentContact: null
@@ -39,6 +40,7 @@ export class Add extends React.Component {
             this.state.contact.email = this.state.currentContact[0].email;
             this.state.contact.phone = this.state.currentContact[0].phone;
             this.state.contact.id = this.state.currentContact[0].id;
+            this.state.contact.price = this.state.currentContact[0].price;
         }
         this.onInputChange = this.onInputChange.bind(this);
     };
@@ -103,6 +105,13 @@ export class Add extends React.Component {
                         placeholder="phone"
                         value={this.state.contact.phone}
                         className="ss" />
+                    <input type="text"
+                        id="price"
+                        onChange={this.onInputChange}
+                        placeholder="price"
+                        value={this.state.contact.price}
+                        className="ss" />
+
 
 
                     <button className="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>

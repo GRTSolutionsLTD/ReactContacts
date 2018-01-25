@@ -10,16 +10,17 @@ export class Contact extends React.Component {
     render() {
 
         return (
-            <div>
-                <span> {this.props.name}</span>
-                <span> {this.props.lastName}</span>
-                <span> <img src={this.props.avatar} style={{ width: 100, height: 50 }} /> </span>
-                <span> {this.props.email} </span>
-                <span> {this.props.phone} </span>
+            <tr>
+                <td> {this.props.name}</td>
+                <td> {this.props.lastName}</td>
+                <td> <img src={this.props.avatar} style={{ width: 100, height: 50 }} /> </td>
+                <td> {this.props.email} </td>
+                <td> {this.props.phone} </td>
+                <td> {this.props.price} </td>
+                <td ><Link to={`/Add/${this.props.id}`}>Update</Link></td>
+                <td><button className="delete" onClick={() => this.props.onDelete(this.props.id)}>delete</button></td>
 
-                <span ><Link to={`/Add/${this.props.id}`}>Update</Link></span>
-                <span><button className="delete" onClick={() => this.props.onDelete(this.props.id)}>delete</button></span>
-            </div>
+            </tr>
         );
     }
 }

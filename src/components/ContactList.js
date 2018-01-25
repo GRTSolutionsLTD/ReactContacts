@@ -12,10 +12,8 @@ import { deleteContact } from './../actions/contactAction';
 export class ContactList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-        }
+        this.state = {}
         this.props.OnRefresh();
-        console.log(this.props)
     }
 
     onInputChange = (event) => {

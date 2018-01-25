@@ -33,7 +33,7 @@ export function OnSearchContactFirstName(Value) {
 }
 
 export function OnSearchContactLastName(Value) {
-    return { type: SEARCH_LAST_NAME, payload: Value};
+    return { type: SEARCH_LAST_NAME, payload: Value };
 }
 
 export function OnSearchContactPhone(Value) {
@@ -58,6 +58,5 @@ export const onLoad = () => (
             })
             .catch(err => {
                 console.log("error");
-            }
-            )
-    })
+            });
+    });
