@@ -3,6 +3,9 @@ body {
   body * {
     box-sizing: border-box; }
 
+.tbl {
+  margin-top: 10%; }
+
 .set-section {
   position: fixed;
   margin-top: 5px;
@@ -157,4 +160,6 @@ table tr:nth-child(2n+1) {
   .table-users {
     border: none;
     box-shadow: none;
-    overflow: visible; } }
+    overflow: visible; }
+  .ReactTable {
+    margin-top: 10%; } }

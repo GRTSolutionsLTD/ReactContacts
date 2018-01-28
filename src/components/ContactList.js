@@ -23,38 +23,6 @@ export class ContactList extends Component {
         this.props.onSearch(this.state.ValueSearch);
     }
 
-    onInputChangeFirstName = (event) => {
-        const value = event.target.value;
-        this.state.ValueSearch = value;
-
-        this.props.OnRefresh();
-        this.props.onSearchFirstName(this.state.ValueSearch);
-    }
-
-    onInputChangeLastName = (event) => {
-        const value = event.target.value;
-        this.state.ValueSearch = value;
-
-        this.props.OnRefresh();
-        this.props.onSearchLastName(this.state.ValueSearch);
-    }
-
-    onInputChangePhone = (event) => {
-        const value = event.target.value;
-        this.state.ValueSearch = value;
-
-        this.props.OnRefresh();
-        this.props.onSearchPhone(this.state.ValueSearch);
-    }
-                
-            
-    onInputChangeEmail = (event) => {
-        const value = event.target.value;
-        this.state.ValueSearch = value;
-
-        this.props.OnRefresh();
-        this.props.onSearchEmail(this.state.ValueSearch);
-    }
 
 
          
@@ -66,27 +34,49 @@ export class ContactList extends Component {
                 columns: [
                     {
                         Header: "First Name",
-                        accessor: "name"
+                        accessor: "name",
+                        filterMethod: (filter, row) => {
+                            return (row[filter.id]).toLowerCase().startsWith(filter.value.toLowerCase());
+                        }
                     },
                     {
                         Header: "Last Name",
                         id: "lastName",
-                        accessor: d => d.lastName
+                        accessor: d => d.lastName,
+                        filterMethod: (filter, row) => {
+                            return (row[filter.id]).toLowerCase().startsWith(filter.value.toLowerCase());
+                        }
                     }
                 ]
             },
             {
                 Header: "details",
                 columns: [
-                    {
-                        Header: "Email",
-                        accessor: "email"
-                    },
-                    {
-                        Header: "Phone",
-                        accessor: "phone"
-                    }
-                ]
+                                 {
+                                     Header: "Email",
+                                     accessor: "email",
+                                     filterMethod: (filter, row) => {
+                                         return (row[filter.id]).toLowerCase().startsWith(filter.value.toLowerCase());
+                                  }
+
+                                 },
+                                 {
+                                     Header: "Phone",
+                                     accessor: "phone"
+                                 },
+                                 {
+                                     Header: "Price",
+                                     accessor: "price"
+                                 },
+                                 {
+                                     expander: true,
+                                     Header: () => <span>Image</span>,
+                                     width: 70,
+                                     heigh: 50,
+                                     Expander: ({ row }) =>
+                                        <img src=".\src\img\login-img.jpg"></img>,
+                                 },
+                        ]
             },
             {
                 Header: "functions",
@@ -97,7 +87,7 @@ export class ContactList extends Component {
                             width: 65,
                             Expander: ({ row }) =>
                                 <span><button className="delete" onClick={() =>  this.props.onDelete(row._original.id)}>delete</button></span>,
-                    },
+                             },
                             {
                                 expander: true,
                                 Header: () => <span>Delete</span>,
@@ -111,23 +101,22 @@ export class ContactList extends Component {
         ];
         
         return (
-            <div>
-                <Link to={`/Add/${null}`} >Add</Link>
-                <br /><br /><br />
-                <ReactTable
-                    data={this.props.FilterList}
-                    columns={columns}
-                    showPagination={true}
-                    showPageSizeOptions={false}
-                    defaultPageSize={10}
-                    filterable
-                   
-                />  
-
-
-
-                
+            <div className="container">
+                <div className="tbl row text-center">
+                            <ReactTable
+                                data={this.props.FilterList}
+                                columns={columns}
+                                showPagination={true}
+                                showPageSizeOptions={false}
+                                defaultPageSize={8}
+                                filterable /> 
+                </div>
+                <div className="row text-center">
+                        <input className="search" type="text" placeholder="search" onChange={this.onInputChange} />
+                  </div>
             </div>
+
+
         );
     }
 }

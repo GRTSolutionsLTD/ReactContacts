@@ -51,7 +51,7 @@ export class ContactGraph extends Component {
             // progressBarStyle={ width: '10%' }
         }
         this.props.onLoad().then(() => {
-            this.createArray()
+            this.createArray();
             //this.setState((prevState, props) => {
             //    return { progressBarWrappersClasses: prevState.progressBarWrappersClasses + " hide" };
             //});

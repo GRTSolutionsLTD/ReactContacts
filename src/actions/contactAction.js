@@ -28,21 +28,6 @@ export function OnSearchContact(Value) {
     return { type: SEARCH_CONTACT, payload: Value };
 }
 
-export function OnSearchContactFirstName(Value) {
-    return { type: SEARCH_FIRST_NAME, payload: Value };
-}
-
-export function OnSearchContactLastName(Value) {
-    return { type: SEARCH_LAST_NAME, payload: Value };
-}
-
-export function OnSearchContactPhone(Value) {
-    return { type: SEARCH_PHONE, payload: Value };
-}
-
-export function OnSearchContactEmail(Value) {
-    return { type: SEARCH_EMAIL, payload: Value };
-}
 
 export function OnRefreshContact() {
     return { type: REFRESH_CONTACT };
@@ -60,3 +45,4 @@ export const onLoad = () => (
                 console.log("error");
             });
     });
+

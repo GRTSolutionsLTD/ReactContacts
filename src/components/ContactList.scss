@@ -9,7 +9,9 @@ body {
         box-sizing: border-box;   
     }
 }
-
+.tbl{
+    margin-top:10%;
+}
 
 .set-section {
     position: fixed;
@@ -235,5 +237,9 @@ table {
         border: none;
         box-shadow: none;
         overflow: visible;
+    }
+
+    .ReactTable {
+        margin-top: 10%;
     }
 }
