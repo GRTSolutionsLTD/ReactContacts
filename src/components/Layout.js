@@ -26,6 +26,7 @@ export class Layout extends React.Component {
         const { location } = this.props;
         const { collapsed } = this.state;
         const navClass = collapsed ? "collapse" : "";
+        
         return (
             <nav className="navbar navbar-inverse navbar-static-top" role="navigation" >
                     <div className="container">

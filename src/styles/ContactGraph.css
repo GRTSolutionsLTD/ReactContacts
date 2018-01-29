@@ -1,5 +1,12 @@
 .page-header {
+  color: #001657;
   border-bottom-color: #001657; }
 
 .dscrb {
   color: #001657; }
+
+text.recharts-text.recharts-label tspan {
+  fill: #ef6800; }
+
+tspan {
+  fill: #011d6e; }

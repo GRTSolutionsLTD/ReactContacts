@@ -28,7 +28,7 @@
       "address": "906 Valley Road Michigan City, IN 46360",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a68009e20d0a9e9acf2a",
@@ -73,7 +73,7 @@
       "address": "218 Pearl Street Brandon, FL 33510",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a68031fdbb1db2c1af47",
@@ -118,7 +118,7 @@
       "address": "664 York Street Cambridge, MA 02138",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a680dcb077889f758961",
@@ -148,7 +148,7 @@
       "address": "194 Washington Avenue Saint Petersburg, FL 33702",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a680ae1ae9a3c960d487",
@@ -178,7 +178,7 @@
       "address": "202 Hartford Road Lynchburg, VA 24502",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a68034cb3968e1f79eac",
@@ -208,7 +208,7 @@
       "address": "305 Willow Drive Superior, WI 54880",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a6808a178bfd034d6ecf",
@@ -253,7 +253,7 @@
       "address": "572 Rose Street Summerfield, FL 34491",
       "birthday": null,
       "notes": "",
-      "price": 100
+      "price": 500
     },
     {
       "id": "5725a6803d87f1b77e17b62b",

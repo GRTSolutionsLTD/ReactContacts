@@ -1,8 +1,15 @@
 @import "../components/ctr.vars.scss";
 
 .page-header {
-    border-bottom-color: #001657
+    color: $colorGraph;
+    border-bottom-color: $colorGraph;
 }
 .dscrb {
     color: $colorGraph;
+}
+text.recharts-text.recharts-label tspan {
+    fill: #ef6800;
+}
+tspan {
+    fill: #011d6e;
 }
