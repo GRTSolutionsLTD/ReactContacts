@@ -77,15 +77,15 @@ img {
     overflow: hidden;
     width: 800px;
 }
-    
-table {
 
-    td, th {
+.rt-table {
+
+    .rt-td, .rt-th {
         color: darken($baseColor, 10%);
         padding: $padding;
     }
 
-    td {
+    .rt-td {
         text-align: center;
         vertical-align: middle;
 
@@ -94,6 +94,7 @@ table {
             line-height: 1.4;
             text-align: left;
         }
+
         button {
             background-image: linear-gradient(to top,#001c73 0,#020202 100%);
             border-color: #001c73;
@@ -106,12 +107,12 @@ table {
         }
     }
 
-    th {
+    .rt-th {
         background-color: lighten($baseColor, 50%);
         font-weight: 300;
     }
 
-    tr {
+    .rt-tr {
         &:nth-child(2n) {
             background-color: white;
         }

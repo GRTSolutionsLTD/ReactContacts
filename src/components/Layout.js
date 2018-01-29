@@ -11,6 +11,7 @@ export class Layout extends React.Component {
         };
     }
     toggleCollapse = (page) => {
+        
         const collapsed = !this.state.collapsed;
         this.setState({ collapsed });
         //change title

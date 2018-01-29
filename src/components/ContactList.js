@@ -38,7 +38,7 @@ export class ContactList extends Component {
                         filterMethod: (filter, row) => {
                             return (row[filter.id]).toLowerCase().startsWith(filter.value.toLowerCase());
                         }
-                    },
+                    }, 
                     {
                         Header: "Last Name",
                         id: "lastName",
@@ -71,10 +71,10 @@ export class ContactList extends Component {
                                  {
                                      expander: true,
                                      Header: () => <span>Image</span>,
-                                     width: 70,
+                                     width: 100,
                                      heigh: 50,
                                      Expander: ({ row }) =>
-                                        <img src=".\src\img\login-img.jpg"></img>,
+                                         <img src={row._original.avatar}></img>,
                                  },
                         ]
             },
@@ -84,7 +84,7 @@ export class ContactList extends Component {
                             {
                             expander: true,
                             Header: () => <span>Delete</span>,
-                            width: 65,
+                            width: 80,
                             Expander: ({ row }) =>
                                 <span><button className="delete" onClick={() =>  this.props.onDelete(row._original.id)}>delete</button></span>,
                              },
