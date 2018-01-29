@@ -3,6 +3,9 @@ body {
   body * {
     box-sizing: border-box; }
 
+.tbl {
+  margin-top: 10%; }
+
 .set-section {
   position: fixed;
   margin-top: 5px;
@@ -50,18 +53,18 @@ img {
   overflow: hidden;
   width: 800px; }
 
-table td, table th {
+.rt-table .rt-td, .rt-table .rt-th {
   color: #2b686e;
   padding: 10px; }
 
-table td {
+.rt-table .rt-td {
   text-align: center;
   vertical-align: middle; }
-  table td:last-child {
+  .rt-table .rt-td:last-child {
     font-size: 0.95em;
     line-height: 1.4;
     text-align: left; }
-  table td button {
+  .rt-table .rt-td button {
     background-image: linear-gradient(to top, #001c73 0, #020202 100%);
     border-color: #001c73;
     color: #e8e8e8;
@@ -71,14 +74,14 @@ table td {
     cursor: pointer;
     border-radius: 4px; }
 
-table th {
+.rt-table .rt-th {
   background-color: #daeff1;
   font-weight: 300; }
 
-table tr:nth-child(2n) {
+.rt-table .rt-tr:nth-child(2n) {
   background-color: white; }
 
-table tr:nth-child(2n+1) {
+.rt-table .rt-tr:nth-child(2n+1) {
   background-color: #edf7f8; }
 
 @media screen and (max-width: 700px) {
@@ -157,4 +160,6 @@ table tr:nth-child(2n+1) {
   .table-users {
     border: none;
     box-shadow: none;
-    overflow: visible; } }
+    overflow: visible; }
+  .ReactTable {
+    margin-top: 10%; } }

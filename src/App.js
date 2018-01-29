@@ -27,11 +27,11 @@ class App extends Component {
                         <Route exact path="/"
                             render={(props) => <Home {...props} data={this.props.onLoad}></Home>} />
                         <Route path="/ContactList"
-                            render={(props) => <ContactList onDelete={this.props.delete} onSearchLastName={this.props.SearchLastName} onSearchFirstName={this.props.SearchFirstName} onSearchPhone={this.props.SearchPhone} onSearchEmail={this.props.SearchEmail} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
+                            render={(props) => <ContactList onDelete={this.props.delete}  onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></ContactList>} />
                         <Route path="/Add/:id"
                             render={(props) => <Add {...props} onAdd={this.props.add} onUpdate={this.props.update} data={this.props.data} ></Add>} />
                         <Route path="/Graph"
-                            render={(props) => <ContactGraph {...props} data={this.props.data} onLoad={this.props.onLoad} ></ContactGraph>} />
+                            render={(props) => <ContactGraph {...props} data={this.props.data} onLoad={this.props.onLoad} onRefresh={this.props.Refresh}></ContactGraph>} />
                     </div>
                 </BrowserRouter>
             </div>
@@ -55,10 +55,6 @@ function mapDispatchToProps(dispatch) {
         add: (contact) => dispatch(OnAddContact(contact)),
         update: (contact) => dispatch(OnUpdateContact(contact)),
         Search: (value) => dispatch(OnSearchContact(value)),
-        SearchLastName: (value) => dispatch(OnSearchContactLastName(value)),
-        SearchFirstName: (value) => dispatch(OnSearchContactFirstName(value)),
-        SearchPhone: (value) => dispatch(OnSearchContactPhone(value)),
-        SearchEmail: (value) => dispatch(OnSearchContactEmail(value)),
         Refresh: () => dispatch(OnRefreshContact())
     };
 }
