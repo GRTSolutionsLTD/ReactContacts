@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
-    "\\src\\api",
     "\\src\\components",
-    "\\src\\reducers",
-    "\\src\\styles"
+    "\\src\\components\\ContactGraphComponent"
   ],
+  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
