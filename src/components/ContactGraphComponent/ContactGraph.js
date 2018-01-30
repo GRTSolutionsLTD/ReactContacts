@@ -13,7 +13,6 @@ import './ContactGraph.css';
 export class ContactGraph extends Component {
     amountArray = [];
     totalArray = [];
-    c = 0;
    
     constructor(props) {
      
