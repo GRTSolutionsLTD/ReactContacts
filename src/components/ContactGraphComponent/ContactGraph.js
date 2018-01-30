@@ -13,26 +13,33 @@ import './ContactGraph.css';
 export class ContactGraph extends Component {
     amountArray = [];
     totalArray = [];
+    c = 0;
    
     constructor(props) {
+     
         super(props);
 
         this.state = {
             amountArray: this.amountArray,
             totalArray: this.totalArray
         }
-
-        this.props.onLoad().then(() => {
-            this.createAmountArray();
-            this.createArrayTotalIncomeOfAgeGroup();
-        });
+       
     }
   
-    //componentDidUpdate(prevProps, prevState) {
-    //    this.createAmountArray();
-    //    this.createArrayTotalIncomeOfAgeGroup();
-    //}
-
+    componentDidMount(prevProps) {
+        if (this.props.data.length>0) {
+            this.createAmountArray();
+            this.createArrayTotalIncomeOfAgeGroup();
+        }
+        else {
+                this.props.onLoad().then(() => {
+                    this.createAmountArray();
+                    this.createArrayTotalIncomeOfAgeGroup();
+                });
+        }
+        
+    }
+   
     createArrayTotalIncomeOfAgeGroup = () => {
         this.totalArray = [];
         for (var i = 0; i < this.props.data.length; i++) {
