@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
-import { Contact } from './Contact'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
-import { deleteContact } from './../actions/contactAction';
+import { deleteContact } from '../../actions/contactAction';
 
 
     
@@ -23,9 +22,6 @@ export class ContactList extends Component {
         this.props.onSearch(this.state.ValueSearch);
     }
 
-
-
-         
     render() {
 
         const columns = [
@@ -103,13 +99,13 @@ export class ContactList extends Component {
         return (
             <div className="container">
                 <div className="tbl row text-center">
-                            <ReactTable
-                                data={this.props.FilterList}
-                                columns={columns}
-                                showPagination={true}
-                                showPageSizeOptions={false}
-                                defaultPageSize={8}
-                                filterable /> 
+                    <ReactTable
+                    data={this.props.data}
+                    columns={columns}
+                    showPagination={true}
+                    showPageSizeOptions={false}
+                    defaultPageSize={8}
+                    filterable /> 
                 </div>
                 <div className="row text-center">
                         <input className="search" type="text" placeholder="search" onChange={this.onInputChange} />

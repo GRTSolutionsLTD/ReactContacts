@@ -7,6 +7,7 @@ import { LineChart, Line, CartesianGrid, YAxis, XAxis, Tooltip, ComposedChart, L
 import SnowStorm from 'react-snowstorm';
 import CustomTooltip from './CustomTooltip';
 import AxisLabel from './AxisLabel';
+import './ContactGraph.css';
 
 
 export class ContactGraph extends Component {
@@ -25,8 +26,12 @@ export class ContactGraph extends Component {
             this.createAmountArray();
             this.createArrayTotalIncomeOfAgeGroup();
         });
-
     }
+  
+    //componentDidUpdate(prevProps, prevState) {
+    //    this.createAmountArray();
+    //    this.createArrayTotalIncomeOfAgeGroup();
+    //}
 
     createArrayTotalIncomeOfAgeGroup = () => {
         this.totalArray = [];
@@ -87,7 +92,7 @@ export class ContactGraph extends Component {
                     <div className="page-header">
                         <h1>Total Graph</h1>
                     </div>
-                    <p className="dscrb">
+                    <p className="description">
                         This graph describes the total income of the same age group.
                     </p>
                 </div>
@@ -108,7 +113,7 @@ export class ContactGraph extends Component {
                     <div className="page-header">
                         <h1>Amount Graph</h1>
                     </div>
-                    <p className="dscrb">
+                    <p className="description">
                         This graph Describes the amount paid for each price.
                     </p>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/AppComponent/App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger'
@@ -10,9 +10,9 @@ import thunkMiddleware from 'redux-thunk'
 import ContactReducer from './reducers/ContactReducer';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './components/home.css'
-import './components/ContactList.css'
-import './styles/ContactGraph.css'
+import './components/HomeComponent/home.css'
+import './components/ContactListComponent/ContactList.css'
+import './components/ContactGraphComponent/ContactGraph.css'
 
 const store = createStore(ContactReducer, applyMiddleware(thunkMiddleware, logger));
 

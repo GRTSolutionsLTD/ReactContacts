@@ -1,10 +1,10 @@
-@import "../components/ctr.vars.scss";
+@import "../ctr.vars.scss";
 
 .page-header {
     color: $colorGraph;
     border-bottom-color: $colorGraph;
 }
-.dscrb {
+.description {
     color: $colorGraph;
 }
 text.recharts-text.recharts-label tspan {
@@ -14,9 +14,6 @@ tspan {
     fill: #011d6e;
 }
 
-/*
-try
-*/
 .ch-item {
     width: 100%;
     height: 100%;
@@ -146,5 +143,3 @@ try
 .ch-item:hover .ch-info-back {
     background: rgba(230,132,107,0.6);
 }
-
-/**/

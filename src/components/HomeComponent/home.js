@@ -2,10 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
-import { ContactList } from './ContactList'
+import { ContactList } from '../ContactListComponent/ContactList'
 import style from './home.css'
 //import ToolTip from 'react-portal-tooltip';
-
 
 export class Home extends Component {
     constructor(props) {
@@ -13,6 +12,9 @@ export class Home extends Component {
         this.state = {
             today: new Date()
         };
+        
+        console.log(this.props.data, "hi its home data")
+        debugger
     }
 
     onInputChange = (event) => {
