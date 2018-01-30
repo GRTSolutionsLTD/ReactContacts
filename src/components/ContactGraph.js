@@ -3,127 +3,123 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
 import ReactDOM from 'react-dom';
-import { LineChart, Line, CartesianGrid, YAxis, XAxis, Tooltip, ComposedChart, Legend, Bar } from 'recharts';
+import { LineChart, Line, CartesianGrid, YAxis, XAxis, Tooltip, ComposedChart, Legend, Bar, RadialBarChart, RadialBar, PieChart, Pie, Cell} from 'recharts';
 import SnowStorm from 'react-snowstorm';
+import CustomTooltip from './CustomTooltip';
+import AxisLabel from './AxisLabel';
 
-const CustomTooltip = React.createClass({
-    propTypes: {
-        payload: PropTypes.array
-    },
-
-    render() {
-        const { active } = this.props;
-
-        if (active) {
-            const { payload, label } = this.props;
-            return (
-                <div className="custom-tooltip transparent">
-                    <p className="label">{`${label} : ${payload ? payload[0].value : 0}`}</p>
-                    <p className="intro">Price:Amount of people</p>
-                </div>
-
-            );
-        }
-
-        return null;
-    }
-});
-
-const AxisLabel = ({ axisType, x, y, width, height, stroke, children }) => {
-    const isVert = axisType === 'yAxis';
-    const cx = isVert ? x : x + (width / 2);
-    const cy = isVert ? (height / 2) + y : y + height + 10;
-    const rot = isVert ? `270 ${cx} ${cy}` : 0;
-    return (
-        <text x={cx} y={cy} transform={`rotate(${rot})`} textAnchor="middle" stroke={stroke}>
-            {children}
-        </text>
-    );
-};
-
-
-export interface Props {
-    data: [];
-    onLoad: object;
-}
 
 export class ContactGraph extends Component {
-    pointsArray = [];
+    amountArray = [];
+    totalArray = [];
+   
     constructor(props) {
         super(props);
-        console.log(props,"this is my types");
+
         this.state = {
-            pointsArray: this.pointsArray,
-            //progressBarWrappersClasses: "row",
-            // progressBarStyle={ width: '10%' }
+            amountArray: this.amountArray,
+            totalArray: this.totalArray
         }
+
         this.props.onLoad().then(() => {
-            this.createArray();
-            //this.setState((prevState, props) => {
-            //    return { progressBarWrappersClasses: prevState.progressBarWrappersClasses + " hide" };
-            //});
+            this.createAmountArray();
+            this.createArrayTotalIncomeOfAgeGroup();
         });
-
-        //let timerId = setInterval(() => {
-        //    var width = "20%";
-        //    var onlyNumberOfWidth = str.slice(0, 2);
-        //    var add20 = parseInt(onlyNumberOfWidth) + 20;
-        //    this.setState({
-        //        progressBarStyle: { width:add20.toString() + "%" }
-        //    });
-        //}, 2000);
-
-        //setTimeout(() => { clearInterval(timerId); }, 10000);
 
     }
 
-    checkAndAdd = (price) => {
-        var found = this.pointsArray.some(function (el) {
+    createArrayTotalIncomeOfAgeGroup = () => {
+        this.totalArray = [];
+        for (var i = 0; i < this.props.data.length; i++) {
+            this.checkAndAddToTotalArray(this.props.data[i].price, this.props.data[i].birthday);
+        }
+
+        this.setState({ totalArray: this.totalArray })
+    }
+
+    checkAndAddToTotalArray = (price, birthday) => {
+        var currentYear = new Date(birthday).getFullYear();
+        
+        var found = this.totalArray.some(function (el) {
+            if (el.year === currentYear) {
+                el.total += price;
+                return true;
+            }
+            return false;     
+        });
+        if (!found) { this.totalArray.push({ year: currentYear, total: price, fill: this.getRandomColor(), name: "Age group : "+(new Date().getFullYear() - currentYear).toString()}); }
+        console.log(this.totalArray);
+
+    }
+   
+    getRandomColor=()=> {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+
+    checkAndAddToAmountArray = (price) => {
+        var found = this.amountArray.some(function (el) {
             return el.price === price && el.people++;
         });
-        if (!found) { this.pointsArray.push({ price: price, people: 1 }); }
-        console.log(this.pointsArray);
+        if (!found) { this.amountArray.push({ price: price, people: 1 }); }
+        console.log(this.amountArray);
     }
 
-    createArray = () => {
-        this.pointsArray = [];
+    createAmountArray = () => {
+        this.amountArray = [];
         for (var i = 0; i < this.props.data.length; i++) {
-            this.checkAndAdd(this.props.data[i].price);
+            this.checkAndAddToAmountArray(this.props.data[i].price);
         }
-        this.setState({ pointsArray: this.pointsArray })
+        this.setState({ amountArray: this.amountArray })
     }
-    //add progress bar to render
-
-    //    <div className={this.state.progressBarWrappersClasses}>
-    //        <div className="col-sm-6 col-sm-offset-3">
-    //            <div className="progress">
-    //                <div className="progress-bar progress-bar-striped" role="progressbar" style={this.state.progressBarStyle} aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-    //            </div>
-    //        </div>
-    //    </div >
-
+   
+    
     render() {
         return (
             <div className="container">
-                <SnowStorm snowColor="#808080"  />
+                <SnowStorm snowStick="false" snowCharacter="$" snowColor="goldenrod" flakeWidth={200} flakeHeight={200} animationInterval={33} />
                 <div className="row">
                     <div className="page-header">
-                        <h1>Contact Graph</h1>
+                        <h1>Total Graph</h1>
+                    </div>
+                    <p className="dscrb">
+                        This graph describes the total income of the same age group.
+                    </p>
+                </div>
+                <RadialBarChart width={730} height={300} innerRadius="10%" outerRadius="80%" data={this.state.totalArray} startAngle={360} endAngle={0} innerRadius={20} outerRadius={140}>
+                    <RadialBar minAngle={15} label={{ fill: '#666', position: 'insideStart' }} background clockWise={true} dataKey='total' />
+
+                    <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
+                    <Tooltip />
+                </RadialBarChart>
+                <div className="ch-item ch-img-2">
+                    <div className="ch-info-wrap">
+                        <div className="ch-info">
+                            <div className="ch-info-front ch-img-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="page-header">
+                        <h1>Amount Graph</h1>
                     </div>
                     <p className="dscrb">
                         This graph Describes the amount paid for each price.
                     </p>
                 </div>
-
-
                 <div className="row">
                     <div className="col-sm-6 col-sm-offset-3">
                         <ComposedChart
                             width={600}
                             height={400}
-                            data={this.state.pointsArray}
+                            data={this.state.amountArray}
                             margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                            <XAxis dataKey="price" label={{ value: 'price', angle: 0, position: 'insideBottomRight', color: 'red' }} />
+                            <XAxis dataKey="price" label={{ value: 'price', angle: 0, position: 'insideBottomRight' }} />
                             <YAxis dataKey="people" label={{ value: 'amount of people', angle: -90, position: 'insideLeft' }} />
                             <Tooltip content={<CustomTooltip />} />
                             <Legend />
